@@ -3,6 +3,7 @@ const app = express()
 const isonline = require("is-reachable")
 const config = require("./config.json")
 const fs = require("fs")
+const log = require("./logs")
 
 
 setInterval(function() {
@@ -60,3 +61,4 @@ app.get("/monitor", async function (req, res) {
 
 })
 app.listen(config.port)
+log.success("Listening on port " + config.port)
